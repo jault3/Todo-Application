@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block nav %}
+	<p><a href="{{url_for('addTask')}}">Add a task!</a></p>
+    <p><a href="{{url_for('deleteTask')}}">Delete a task!</a></p>
+    <p><a href="{{url_for('index')}}">Todo List</a></p>
+{%endblock %}
+
+{% block body %}
+	<h1><strong>ToDo List</strong></h1>
+    <form method=post action="{{url_for('index')}}">
+        	{% for field in form %}
+                    <tr>
+                        <td>{{ field }} {{ field.label }}</td>
+                    </tr>
+            {% endfor %}
+            <br /><br />
+            <input type="submit" name="submit" value="Mark As Complete" />
+    </form>
+    {% with messages = get_flashed_messages() %}
+		{% if messages %}
+				{% for message in messages %}
+					{{message}}
+				{% endfor %}
+		{% endif %}
+	{% endwith %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block nav %}
+	<p><a href="{{url_for('addTask')}}">Add a task!</a></p>
+    <p><a href="{{url_for('deleteTask')}}">Delete a task!</a></p>
+    <p><a href="{{url_for('index')}}">Todo List</a></p>
+{%endblock %}
+	
+{% block body %}
+	<h1><strong>Choose the Tasks You Want to Delete</strong></h1>
+    {% from "_formhelpers.html" import render_field %}
+        <form method=post action="{{url_for('deleteTask')}}">
+        	{% for field in form %}
+                    <tr>
+                    {% if field.type == "BooleanField" %}
+                        <td></td>
+                        <td>{{ field }} {{ field.label }}</td>
+                    {% else %}
+                    
+                    {% endif %}
+                    </tr>
+            {% endfor %}
+            <br />
+            Choose the number of the task that you want to delete.<br />
+            <input type="Text" name="taskChoice" />
+            <input type="submit" name="submit" value="Delete" />
+        </form>
+        
+        {% with messages = get_flashed_messages() %}
+		{% if messages %}
+				{% for message in messages %}
+					{{message}}
+				{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+{% endblock %}

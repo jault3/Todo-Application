@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background:#333333;
+	text-align:center;
+}
+
+.wrapper {
+	width:80em;
+	margin: 0 auto 0 auto;
+	text-align:left;	
+}
+
+.wrapperContent {
+	background: #FFFFFF;
+	border-radius:1em;
+	min-height:30em;
+	margin-left:18em;
+	padding: 0.25em 0 0 1em;
+}
+
+.wrapperLeft {
+	width:17em;
+	border-radius:1em;
+	margin-right:1em;
+	float:left;
+	background:#FFFFFF;
+	min-height:30em;
+	padding-top:0.25em;
+}
