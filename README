@@ -1,0 +1,3 @@
+This is a todo list application that allows a user to input
+a task and a date that it must be completed by.  The user can
+also delete tasks as well as mark them complete.
